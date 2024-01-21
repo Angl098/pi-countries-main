@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//! Imports for Routes
+import { Route, Routes } from "react-router-dom";
+
+//! Import PhatRoutes
+import PATHROUTES from "./components/helpers/pathroutes";
+import ProtectedRoute from "./utils/ProtectedRoute";
+
+
+//! Imports views
+import Home from "./views/home/home";
+import About from "./views/about/about";
+import Landing from "./views/landing/landing";
+import Detail from "./views/detail/detail";
+import Create from "./views/create/create";
+
+//! Imports style
 import './App.css'
+import { useSelector } from 'react-redux'
+
+const { LANDING, HOME, ABOUT, DETAIL, FORM } = PATHROUTES;
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const access = useSelector((state) => state.access)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React KLK</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Routes>
+        <Route path={LANDING} element={<Landing />} />
+        
+        <Route >
+        {/* <Route element={<ProtectedRoute access={access}/>}> */}
+          <Route path={HOME} element={<Home />} />
+          <Route path={DETAIL} element={<Detail />} />
+          <Route path={ABOUT} element={<About />} />
+          <Route path={FORM} element={<Create />} />
+        </Route>
+
+        <Route/>
+      </Routes>
+    </div>
   )
 }
 

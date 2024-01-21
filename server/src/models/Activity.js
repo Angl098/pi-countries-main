@@ -5,8 +5,9 @@ module.exports = (sequelize) => {
     // defino el modelo
     sequelize.define('Activity', {
         id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
         },
         name: {
             type: DataTypes.STRING,
@@ -17,12 +18,7 @@ module.exports = (sequelize) => {
             allowNull: false,
             validate: {
                 min: 1,
-                max: 5,
-                isInRange(value) {
-                    if (value < 1 || value > 5) {
-                        throw new Error("La dificultad debe ser entre 1 y 5")
-                    }
-                }
+                max: 5
             },
         },
         duracion: {

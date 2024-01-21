@@ -1,0 +1,139 @@
+.containerCard {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.ButtonSeeMore{
+    cursor: pointer;
+    color:white;
+    border-radius: 4px;
+    font-size: medium;
+    padding: 1px 20px 1px 20px;
+    border: 1px solid #1f6dff;
+    background-color: #991d48;
+}
+.ButtonSeeMore:hover{
+    color: #062833;
+    border-radius: 4px;
+    font-size: medium;
+    font-weight: bold;
+    scale: 1.1;
+    border: 1px solid #991d48;
+    background-color: #207c9a;
+}
+
+.ContainerBandera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .5s;
+    transform: perspective(600px) rotateY(0deg);
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px #1c1d1d;
+}
+
+.containerCard:hover .ContainerBandera { 
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.containerCard:hover .ContainerInfo{ 
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+.ContainerInfo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .5s;    
+    display: flex;
+    flex-direction: column;
+    transform: perspective(600px) rotateY(180deg);
+    box-shadow: 0px 2px 5px #1c1d1d;
+    background: #207c9a;
+    border-radius: 10px
+}
+
+
+
+
+.ImgBandera {
+    width: 250px;
+    height: 150px;
+    box-shadow: 5px 5px 10px 1px #1c1d1d;
+}
+
+.ImgBanderaSmall {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px 1px #1c1d1d;
+    margin-top: 10px;
+    margin-left: -110px;
+
+}
+
+.ContainerName {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 70px;
+    width: 180px;
+    height: 80px;
+}
+
+.Name {
+    font-size: 18px;
+    margin: 20px 10px 10px 10px;
+    color: #b92c5d;
+}
+.NameLarge {
+    font-size: 16px;
+    margin: 10px 5px 5px 5px;
+    color: #b92c5d;
+}
+
+.ContainerInfo h3 {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.Icons {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    color: #FFD41F;
+    margin-top: -5px;
+}
+.IconGroup {
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    color: #FFD41F;
+    margin-top: -5px;
+}
+
+.ContainerIcons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    margin-top: -10px;
+}
+.ContainerIcons div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+
+}

@@ -1,0 +1,77 @@
+.Container{
+    width: 100%;
+    position: unset;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.Pagination{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.ButtonActive{
+    cursor: pointer;
+    color: #FFD41F;
+    background-color: #5B1D99;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ffffff;
+}
+.Button{
+    cursor: pointer;
+    color: #FFD41F;
+    font-size: 15px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000000;
+    width: 40px;
+}
+.ButtonFlechas{
+    cursor: pointer;
+    color: #5B1D99;
+    background-color: #FFD41F;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    border: solid 1px #5B1D99;
+}
+.ButtonFlechas::disabled{
+    cursor: pointer;
+    color: #5B1D99;
+    background-color: #FFD41F;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    border: solid 1px #5B1D99;
+}
+.LabelSize{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    background: transparent;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.SelectSize{
+    cursor: pointer;
+    color: #FFD41F;
+    background-color: #5B1D99;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #FFD41F;
+}
