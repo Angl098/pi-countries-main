@@ -15,6 +15,7 @@ import {
 const initialState = {
     allCountries: [],
     allActivities: [],
+    activities: [],
     count: 0,
     error: null,
     deselectCountries: [],
@@ -35,6 +36,7 @@ const rooReducer = (state = initialState, { type, payload, count, countAll }) =>
             return {
                 ...state,
                 allActivities: payload,
+                activities: payload,
             };
         case CREATE_ACTIVITY:
             return {

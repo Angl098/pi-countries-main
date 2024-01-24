@@ -3,10 +3,10 @@
 const RegExp24hrs = /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/
 
 
-export const validation = (data, activities) => {
+export const validation = (data, activity) => {
     let errors = {};
 
-    const repeatedActivity = activities?.some(activity => activity.name === data.name);
+    const repeatedActivity = activity.some(activity => activity.name === data.name);
 
     const formatDuration = RegExp24hrs.test(data.duracion);
     const hours = +data.duracion.split(':')[0];
@@ -14,7 +14,7 @@ export const validation = (data, activities) => {
     const hourRange = hours > 0 && hours < 6;
     
     if (!data.name) {
-        errors.name="Activity name missing!"
+        errors.name= "Activity name missing!"
     } else if (repeatedActivity) {
         errors.name = "The activity already exists"
     }

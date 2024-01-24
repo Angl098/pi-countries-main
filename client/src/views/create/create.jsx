@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./create.module.css";
 import Nav from "../../components/Nav/Nav";
-import { getAllCountries, postActivity, selectCountry, deselectCountry, cleanerAll, } from "../../redux/actions/actions";
+import { getAllCountries, postActivity, selectCountry, deselectCountry, cleanerAll, getActivities } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { validation } from "../../utils/validation";
 
@@ -12,6 +12,7 @@ const Create = () => {
     const selectCountries = useSelector((state) => state.selectCountries)
     const deselectCountries = useSelector((state) => state.deselectCountries)
     const activities = useSelector((state) => state.allActivities)
+    const activity = useSelector((state) => state.activities)
     const [errors, setErrors] = useState({
         name: "",
         dificultad: "",
@@ -52,6 +53,16 @@ const Create = () => {
         const property = event.target.name;
         const value = event.target.value;
 
+        setErrors(
+            validation(
+                {
+                    ...newActivity,
+                    countryId: selectCountries.map((country) => country.id),
+                },
+                activities
+            )
+        );
+
         setNewActivity({
             ...newActivity,
             [property]: value,
@@ -59,7 +70,7 @@ const Create = () => {
     };
 
     const handleSubmit = (event) => {
-        console.log(selectCountries);
+
         event.preventDefault();
         const activity = {
             ...newActivity,
@@ -123,6 +134,7 @@ const Create = () => {
 
     useEffect(() => {
         dispatch(getAllCountries(name));
+        dispatch(getActivities());
     }, [dispatch, name]);
 
     useEffect(() => {
@@ -331,7 +343,7 @@ const Create = () => {
                             </div>
                         </div>
                     </div>
-
+                    
                     <div className={styles.SectionsSubmit}>
                         <button
                             className={styles.ButtonSubmit}

@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import PATHROUTES from "./components/helpers/pathroutes";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
-
 //! Imports views
 import Home from "./views/home/home";
 import About from "./views/about/about";
@@ -26,15 +25,14 @@ function App() {
       <Routes>
         <Route path={LANDING} element={<Landing />} />
         
-        <Route >
-        {/* <Route element={<ProtectedRoute access={access}/>}> */}
+        <Route element={<ProtectedRoute access={access}/>} >
           <Route path={HOME} element={<Home />} />
           <Route path={DETAIL} element={<Detail />} />
           <Route path={ABOUT} element={<About />} />
           <Route path={FORM} element={<Create />} />
         </Route>
 
-        <Route/>
+        
       </Routes>
     </div>
   )

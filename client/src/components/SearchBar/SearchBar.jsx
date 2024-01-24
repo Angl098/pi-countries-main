@@ -21,7 +21,7 @@ const SearchBar = ({
             <div className={styles.ContainerSearch}>
                 <h1>Orders</h1>
                 <select onChange={(e) => addOrder(e.target.value)}>
-                    <option defaultValue="ASC" value="ASC">
+                    <option key="" defaultValue="ASC" value="ASC">
                         Ascendente
                     </option>
                     <option value="DESC">Descendente</option>

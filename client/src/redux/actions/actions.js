@@ -76,7 +76,7 @@ export const postActivity = (activity) => {
         } catch (error) {
             return dispatch({
                 type: ERROR,
-                pacyload: error.message,
+                payload: error.message,
             });
         }
     };

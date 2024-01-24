@@ -65,7 +65,7 @@ const Home = () => {
         dispatch(getActivities(activity));
     }, [dispatch, page, name, atributo, order, size, continents, activity]);
 
-    //? Render of view Home
+    
     return (
         <div className={styles.Container}>
             <Nav />
